@@ -39,7 +39,7 @@ const Sidebar = () => {
           {sidebarLinks.map((link) => (
             <div
               onClick={link.name == 'Create' ? handleCreate : () => {}}
-              className='flex p-2 w-9/12 mb-5  cursor-pointer hover:bg-gray-100 hover:translate-x-1 transition-all rounded-md'>
+              className='flex p-2 w-full mb-5  cursor-pointer hover:bg-gray-100 hover:translate-x-1 transition-all rounded-md'>
               <div className='mr-2'>{link.ico}</div>
               <div className='sm:hidden md:flex'>{link.name}</div>
             </div>
