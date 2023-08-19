@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CInput = (props) => {
+  console.log(props,'o')
   return (
     <div className='w-full'>
       <input

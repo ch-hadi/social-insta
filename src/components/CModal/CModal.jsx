@@ -55,11 +55,12 @@ export default function CModal(props) {
         'Content-Type': 'multipart/form-data', // Set the correct content type for form data.
       },
     });
-
-    console.log(res);
+    if(res.data.success){
+      props.setOpen(false)
+    }
     setPostedDate(timeAgo);
     // Now you can use the 'timeAgo' variable to display the time in the post
-    console.log('created at:', timeAgo);
+    // console.log('created at:', timeAgo); 
     // console.log('created !');
   };
 

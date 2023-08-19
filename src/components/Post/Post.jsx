@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CInput from '../CInput/CInput';
 
 const Post = () => {
+  const [comment,setComment]= useState('');
+  const handleCommentChange=(e)=>{
+    // console.log(e)
+    setComment(e.target.value);
+  }
+  // console.log(comment)
   return (
     <div className='mb-10 min-h-[auto] rounded'>
       <head className=' flex py-3 items-center'>
-        <div className='w-1/2 flex items-center '>
+        <div className='w-11/12 flex items-center '>
           <img className='w-[40px] h-[40px] mx-3' src='/logo192.png' />
           <p>Hammad Ahmad</p>
           <span className='ml-2'>● 2d</span>
         </div>
-        <div className='flex w-1/2 justify-end'>
+        <div className='flex w-1/12 justify-end'>
           <p className='mx-3'>
             <svg
               aria-label='More options'
@@ -93,9 +99,15 @@ const Post = () => {
       <div className='mx-2 mt-2'>
         <p className='mr-2 flex items-center'>4 Likes</p>
       </div>
-      <CInput placeholder='Add comment..' width='100%' />
+     <div>
+      <div className='flex relative items-center justify-between'> <CInput onChange={handleCommentChange} placeholder='Add comment..' width='100%' />
+      {comment.length>0?<p className='absolute right-0 text-[12px] font-bold text-blue-800 cursor-pointer hover:text-green-800' onClick={()=>console.log(comment.trim())}>Post</p>:''}
+      </div>
+     </div>
     </div>
   );
 };
 
 export default Post;
+
+
